@@ -103,8 +103,8 @@ export async function sendContactMessage(
     const resend = new Resend(apiKey);
 
     const { error } = await resend.emails.send({
-      from: process.env.CONTACT_FROM_EMAIL ?? "Portfolio <onboarding@resend.dev>",
-      to: [process.env.CONTACT_TO_EMAIL ?? site.email],
+      from: process.env.CONTACT_FROM_EMAIL || "Portfolio <onboarding@resend.dev>",
+      to: [process.env.CONTACT_TO_EMAIL || site.email],
       replyTo: email,
       subject: `Portfolio enquiry from ${name}`,
       text: [

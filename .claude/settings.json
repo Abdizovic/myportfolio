@@ -41,7 +41,21 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
-      "Bash(NEXT_TELEMETRY_DISABLED=1 npx tsc --noEmit)"
+      "Bash(NEXT_TELEMETRY_DISABLED=1 npx tsc --noEmit)",
+      "Bash(git check-ignore *)",
+      "Read(//c/Users/Admin/AppData/Local/Temp/claude/**)",
+      "Bash(xargs -I{} ls -la \"{}\")",
+      "Bash(sort -k6,7)",
+      "Bash(find \"C:/Users/Admin/AppData/Local/Temp\" -maxdepth 3 -newermt \"2026-07-30\" \\\\\\( -iname \"*.png\" -o -iname \"*.jpg\" -o -iname \"*.jpeg\" -o -iname \"*.webp\" \\\\\\) 2>/dev/null)",
+      "Read(//c/Users/Admin/AppData/Local/Temp/**)",
+      "Bash(find \"C:/Users/Admin/AppData/Local/Temp\" -maxdepth 4 -newermt \"2026-07-30 00:00\" \\\\\\( -iname \"*.png\" -o -iname \"*.jpg\" -o -iname \"*.jpeg\" -o -iname \"*.webp\" \\\\\\) 2>/dev/null)",
+      "Bash(grep -viE '\\\\.log$|\\\\.tmp$')",
+      "Bash(find ~/Downloads -maxdepth 1 -newermt \"2026-07-29\" \\\\\\( -iname \"*.png\" -o -iname \"*.jpg\" -o -iname \"*.jpeg\" \\\\\\) -printf \"%T@ %p\\\\n\" 2>/dev/null | sort -rn | head -10)",
+      "Read(//c/Users/Admin/Downloads/**)",
+      "Bash(cp \"/c/Users/Admin/Downloads/profilepic.jpeg\" \"/c/Users/Admin/OneDrive/Desktop/myportfolioprojrcts/public/abdikarim.png\" && ls -la \"/c/Users/Admin/OneDrive/Desktop/myportfolioprojrcts/public/abdikarim.png\")"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Admin\\Downloads"
     ]
   }
 }

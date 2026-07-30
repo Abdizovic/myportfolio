@@ -25,7 +25,7 @@ export const site = {
    * domain. Used for canonical tags, OG images, sitemap and robots.txt.
    */
   url:
-    process.env.NEXT_PUBLIC_SITE_URL ??
+    process.env.NEXT_PUBLIC_SITE_URL ||
     (process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "http://localhost:3000"),
@@ -39,7 +39,7 @@ export const site = {
 
   /** Public path to the CV. Replace the file in /public with your real PDF. */
   cv: "/abdikarim-cv.pdf",
-  avatar: "/abdikarim.jpg",
+  avatar: "/abdikarim.png",
 } as const;
 
 export type SocialLink = {
@@ -55,7 +55,7 @@ export type SocialLink = {
  * Vercel for the GitHub link and widget to work.
  */
 export const githubUsername =
-  process.env.NEXT_PUBLIC_GITHUB_USERNAME ?? "Abdizovic";
+  process.env.NEXT_PUBLIC_GITHUB_USERNAME || "Abdizovic";
 
 export const socials: SocialLink[] = [
   {

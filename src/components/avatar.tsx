@@ -40,7 +40,7 @@ export function Avatar({
         height={size}
         priority={priority}
         sizes={`(max-width: 640px) 12rem, ${size}px`}
-        className={`h-full w-full object-cover ${className}`}
+        className={`h-full w-full object-cover object-top ${className}`}
       />
     );
   }
