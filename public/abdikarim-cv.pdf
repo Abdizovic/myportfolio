@@ -1,0 +1,135 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 1869 >>
+stream
+BT
+1 0 0 1 62 760 Tm
+/F1 26 Tf
+0 0.55 0.35 rg
+(Abdikarim) Tj
+0 -30 Td
+/F2 13 Tf
+0.12 0.14 0.15 rg
+(Frontend Developer & Freelancer) Tj
+0 -18 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(CS Student, Umma University - Kajiado, Kenya) Tj
+0 -16 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(abdkarimochieng@gmail.com) Tj
+0 -10 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+0 -22 Td
+/F1 13 Tf
+0 0.55 0.35 rg
+(PLACEHOLDER CV) Tj
+0 -4 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+0 -18 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(This file ships with the portfolio so the "Download CV" button) Tj
+0 -15 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(works from day one. Replace it with your real CV, keeping the) Tj
+0 -15 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(same filename:) Tj
+0 -6 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+0 -15 Td
+/F1 11 Tf
+0 0.55 0.35 rg
+(    public/abdikarim-cv.pdf) Tj
+0 -6 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+0 -18 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(The path is configured in src/content/site.ts \(site.cv\), so you) Tj
+0 -15 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(can rename it there if you prefer a different filename.) Tj
+0 -10 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+0 -22 Td
+/F1 12 Tf
+0 0.55 0.35 rg
+(Suggested sections for the real thing:) Tj
+0 -4 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+0 -17 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(  - Profile: one paragraph, lead with M-Pesa/Daraja experience) Tj
+0 -15 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(  - Skills: Next.js, TypeScript, React, Supabase, Tailwind CSS,) Tj
+0 -15 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(    React Query, M-Pesa Daraja API, React Native, Figma) Tj
+0 -15 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(  - Projects: Mwangaza Academy, HOROLOGY, Chama Platform) Tj
+0 -15 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(    \(link each to its case study page on the site\)) Tj
+0 -15 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(  - Education: BSc Computer Science, Umma University) Tj
+0 -15 Td
+/F2 11 Tf
+0.12 0.14 0.15 rg
+(  - Links: portfolio, GitHub, LinkedIn, Upwork) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Title (Abdikarim - CV placeholder) /Author (Abdikarim) /Producer (portfolio) >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000353 00000 n 
+0000000450 00000 n 
+0000002370 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R /Info 7 0 R >>
+startxref
+2469
+%%EOF
