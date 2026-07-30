@@ -5,10 +5,8 @@ import { useFormStatus } from "react-dom";
 
 import { ArrowRightIcon, CheckIcon } from "@/components/icons";
 import { buttonClass } from "@/components/ui";
-import {
-  initialContactState,
-  sendContactMessage,
-} from "@/app/actions/contact";
+import { sendContactMessage } from "@/app/actions/contact";
+import { initialContactState } from "@/app/actions/contact-state";
 
 const field =
   "w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted/70 focus:border-accent focus:outline-none";
