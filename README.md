@@ -20,7 +20,7 @@ are marked `TODO:`.
 
 | # | What | Where |
 | - | ---- | ----- |
-| 1 | LinkedIn, Upwork handles and WhatsApp number (GitHub is done) | `src/content/site.ts` → `socials` |
+| 1 | ~~LinkedIn, WhatsApp~~ done; Upwork removed (GitHub is done) | `src/content/site.ts` → `socials` |
 | 2 | Profile photo | drop `abdikarim.jpg` into `public/` |
 | 3 | CV | replace `public/abdikarim-cv.pdf` |
 | 4 | Demo video links for every project | `src/content/projects.ts` |

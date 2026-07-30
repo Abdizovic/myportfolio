@@ -46,7 +46,7 @@ export type SocialLink = {
   label: string;
   href: string;
   handle: string;
-  icon: "github" | "linkedin" | "upwork" | "mail" | "whatsapp";
+  icon: "github" | "linkedin" | "mail" | "whatsapp";
 };
 
 /**
@@ -66,15 +66,9 @@ export const socials: SocialLink[] = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/abdikarim", // TODO: confirm handle
-    handle: "/in/abdikarim",
+    href: "https://www.linkedin.com/in/abdkarim-ochieng-6946983a1",
+    handle: "/in/abdkarim-ochieng",
     icon: "linkedin",
-  },
-  {
-    label: "Upwork",
-    href: "https://www.upwork.com/freelancers/~abdikarim", // TODO: confirm profile URL
-    handle: "Upwork profile",
-    icon: "upwork",
   },
   {
     label: "Email",

@@ -2,7 +2,6 @@
   GithubIcon,
   LinkedinIcon,
   MailIcon,
-  UpworkIcon,
   WhatsappIcon,
 } from "@/components/icons";
 import { socials, type SocialLink } from "@/content/site";
@@ -10,7 +9,6 @@ import { socials, type SocialLink } from "@/content/site";
 const iconFor = {
   github: GithubIcon,
   linkedin: LinkedinIcon,
-  upwork: UpworkIcon,
   mail: MailIcon,
   whatsapp: WhatsappIcon,
 } as const;

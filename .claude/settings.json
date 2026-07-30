@@ -38,7 +38,10 @@
       "Bash(grep -E \"✓|✗|error|Route|/$|_not-found\")",
       "Bash(node -pe \"require\\('./package.json'\\).name\")",
       "Bash(gh repo *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(NEXT_TELEMETRY_DISABLED=1 npx tsc --noEmit)"
     ]
   }
 }
