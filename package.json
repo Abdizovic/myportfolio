@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "manuals": "node --experimental-strip-types --no-warnings scripts/generate-manuals.mjs"
+    "manuals": "node --experimental-strip-types --no-warnings scripts/generate-manuals.mjs",
+    "cv": "node --experimental-strip-types --no-warnings scripts/generate-cv.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
