@@ -3,6 +3,7 @@ import {
   CheckIcon,
   LayoutIcon,
   PaymentsIcon,
+  SearchIcon,
   StackIcon,
 } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
@@ -14,6 +15,7 @@ const iconFor = {
   layout: LayoutIcon,
   payments: PaymentsIcon,
   stack: StackIcon,
+  search: SearchIcon,
 } as const;
 
 export function Services() {

@@ -379,13 +379,13 @@ export const projects: Project[] = [
     slug: "booking-appointment-portal",
     name: "Booking & Appointment Portal",
     tagline:
-      "Multi-business booking SaaS — published services, real availability, and an admin side gated behind an invite code.",
+      "Multi-business booking SaaS — published services, real availability, and an owner dashboard to run the day.",
     summary:
       "A booking product for businesses that sell someone's time: salons, clinics, garages, consultants. A business publishes its services and working hours, customers book a slot that is genuinely free, and the phone stops ringing about scheduling.",
     year: "2026",
     status: "Live",
     domain: "SaaS / Scheduling",
-    liveUrl: "https://booking-appointment-portal-56m9.vercel.app",
+    liveUrl: "https://ratiba-blush.vercel.app",
     demoVideoUrl: null, // TODO: paste the Loom / YouTube walkthrough URL
     repoUrl: null, // TODO: add if the repo is public
     tags: [
@@ -399,7 +399,7 @@ export const projects: Project[] = [
     features: [
       "Guest booking — pick a service, pick a slot, three fields, done. No account required",
       "Availability computed at request time from working hours, service duration and buffers",
-      "Admin access gated behind a separate invite code, so a public sign-up can never self-promote",
+      "Per-business tenancy — each business gets its own booking page and dashboard, data isolated with row-level security",
       "Owner dashboard: today's diary, appointment states, customer history, walk-in entry",
       "Reschedule and cancel by reference, with a configurable cutoff before the appointment",
       "Per-service duration, price and buffer, plus one-off blocked dates for holidays and leave",
@@ -408,7 +408,7 @@ export const projects: Project[] = [
       { label: "Role", value: "Solo developer — architecture, frontend, backend" },
       { label: "Timeline", value: "2026" },
       { label: "Tenancy", value: "Per-business, RLS-enforced" },
-      { label: "Admin gate", value: "Email + password + invite code" },
+      { label: "Scheduling", value: "Availability computed live, never stored" },
     ],
     caseStudy: [
       {
@@ -422,12 +422,12 @@ export const projects: Project[] = [
         title: "The approach",
         body: [
           "The core question the product has to answer correctly is 'is this slot free', and the tempting shortcut is to pre-generate slots into a table. I compute availability at request time from the business's working hours, the duration and buffer of the service being booked, and the appointments already taken. It costs a query; it means the calendar cannot ever be stale.",
-          "The second decision was the admin gate. Sign-up is open because businesses onboard themselves, but an ordinary sign-up must never be able to become an administrator. A separate invite code is required alongside the email and password, checked server-side, so the elevation path is not something the client can reach for.",
+          "The second decision was tenancy. Each business's data — services, working hours, appointments — has to stay strictly separate from every other business's, and the cheapest way to get that wrong is to filter by business ID in application code, where one missed condition leaks another business's calendar. I pushed isolation into Postgres row-level security instead: policies key off the authenticated business, so a query written carelessly in the frontend still cannot return another business's rows.",
         ],
         list: [
           "Availability derived at request time, never stored — a taken slot disappears on the next look",
           "Booking writes guarded against the slot being taken between the customer seeing it and confirming",
-          "Admin elevation behind a server-checked invite code, separate from the password",
+          "Owner dashboard behind its own authenticated route, kept separate from the public booking pages",
           "Per-business tenancy enforced with row-level security rather than in application code",
         ],
       },

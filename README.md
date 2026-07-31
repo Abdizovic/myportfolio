@@ -25,7 +25,6 @@ are marked `TODO:`.
 | 3 | CV | replace `public/abdikarim-cv.pdf` |
 | 4 | Demo video links for every project | `src/content/projects.ts` |
 | 5 | Contact email delivery | set `RESEND_API_KEY` (see `.env.example`) |
-| 6 | Two live URLs are currently broken — see below | `src/content/projects.ts` |
 
 The contact email currently defaults to `abdkarimochieng@gmail.com` — confirm
 that's the address you want published.
@@ -34,16 +33,8 @@ that's the address you want published.
 conditionally rendered, so a `null` is simply omitted. A dead link costs more
 credibility than a missing one.
 
-### Broken project URLs
+### Notes on live URLs
 
-Checked at the time of writing:
-
-- **Booking & Appointment Portal** — `booking-appointment-portal-56m9.vercel.app`
-  returns **404** on every path, as does `booking-appointment-portal.vercel.app`.
-  The project is listed with that URL as supplied, but the "Visit live site"
-  button and the address printed in the PDF guide are both dead until the real
-  production alias is filled in (`src/content/projects.ts` and
-  `src/content/manuals.ts`).
 - **Duka POS** — the URL supplied
   (`duka-pos-urit-hxj763x8h-griffin9.vercel.app`) is a per-deployment preview
   URL sitting behind Vercel SSO, so a visitor is bounced to a Vercel login. The
@@ -62,8 +53,7 @@ The guides publish demo admin credentials on purpose, so a visitor can walk into
 the admin side of a project without emailing first. That means anyone on the
 internet can sign in to those deployments: keep them as showcases holding
 disposable data, never reuse the passwords elsewhere, and update
-`src/content/manuals.ts` whenever they rotate. Mwangaza Academy deliberately
-publishes none, since its data model is school and pupil records.
+`src/content/manuals.ts` whenever they rotate.
 
 ### Profile photo
 

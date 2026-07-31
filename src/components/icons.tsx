@@ -210,3 +210,13 @@ export function PaymentsIcon(props: IconProps) {
     </Svg>
   );
 }
+
+export function SearchIcon(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <circle {...stroke} cx="10.5" cy="10.5" r="6.5" />
+      <path {...stroke} d="M7.5 12.2 9.3 9l1.9 2.3L13.8 7.5" />
+      <path {...stroke} d="m19.5 19.5-4.3-4.3" />
+    </Svg>
+  );
+}

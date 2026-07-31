@@ -2,7 +2,7 @@ export type Service = {
   title: string;
   description: string;
   deliverables: string[];
-  icon: "layout" | "figma" | "payments" | "stack";
+  icon: "layout" | "figma" | "payments" | "stack" | "search";
 };
 
 export const services: Service[] = [
@@ -49,6 +49,17 @@ export const services: Service[] = [
       "Deployed on Vercel with analytics and monitoring wired up",
     ],
     icon: "stack",
+  },
+  {
+    title: "Search Engine Optimization (SEO)",
+    description:
+      "Search Engine Optimization (SEO) is the practice of improving your website's visibility on search engines like Google by optimizing content, structure, and technical performance. Done well, SEO drives organic traffic, builds credibility, and helps your site compete without relying solely on paid ads.",
+    deliverables: [
+      "Technical audit — crawlability, indexing, Core Web Vitals, structured data",
+      "On-page optimization — metadata, headings, semantic structure, internal linking",
+      "Search Console setup and ongoing performance reporting",
+    ],
+    icon: "search",
   },
 ];
 

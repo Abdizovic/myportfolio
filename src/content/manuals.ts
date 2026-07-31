@@ -101,10 +101,11 @@ export const manuals: Manual[] = [
       {
         role: "Admin console",
         fields: [
+          { label: "Admin code", value: "czUF0aZ3AbbrbZjW" },
           { label: "Email", value: "abdkarimochieng@gmail.com" },
           { label: "Password", value: "#Abdik2109" },
         ],
-        note: "Full access to products, inventory and order fulfilment.",
+        note: "Full access to products, inventory and order fulfilment. The admin code is required on Create an admin account, alongside the email and password — not on an ordinary sign-in.",
       },
       {
         role: "Storefront shopper",
@@ -218,7 +219,7 @@ export const manuals: Manual[] = [
             kind: "bullets",
             items: [
               "Forgot password? sends a reset link — avoid it on the shared demo account, as it changes the password for everyone reading this guide.",
-              "Create an admin account is for invited staff. It expects an invite, so it is not the route in for a demo visit.",
+              "Create an admin account is for invited staff. It expects the admin code from the credentials table above alongside an email and password, so it is not the route in for a demo visit — use Sign In with the demo account instead.",
             ],
           },
         ],
@@ -690,7 +691,7 @@ export const manuals: Manual[] = [
     environments: [
       {
         label: "Booking portal",
-        url: "https://booking-appointment-portal-56m9.vercel.app",
+        url: "https://ratiba-blush.vercel.app",
         note: "Customer booking pages and the owner's dashboard behind one address.",
       },
     ],
@@ -698,11 +699,10 @@ export const manuals: Manual[] = [
       {
         role: "Admin",
         fields: [
-          { label: "Admin code", value: "czUF0aZ3AbbrbZjW" },
           { label: "Email", value: "abdkarimochieng@gmail.com" },
           { label: "Password", value: "MyNewPassword123" },
         ],
-        note: "The admin code is what promotes a sign-up to an administrator — enter it on the admin sign-up or admin sign-in screen alongside the email and password.",
+        note: "Sign in with these details to reach the owner dashboard — services, availability and bookings.",
       },
       {
         role: "Customer",
@@ -774,20 +774,15 @@ export const manuals: Manual[] = [
         blocks: [
           {
             kind: "text",
-            text: "The admin side is protected by two things: the usual email and password, and an admin code. The code is what marks an account as an administrator, so an ordinary sign-up can never quietly become one.",
+            text: "The admin side is behind its own sign-in, separate from the customer booking pages.",
           },
           {
             kind: "steps",
             items: [
               "Open the portal and go to the admin sign-in.",
               "Enter the email and password from the credentials table at the front of this guide.",
-              "Enter the admin code from the same table when prompted — on sign-in, or on the admin sign-up screen if you are registering a fresh administrator.",
               "Submit. You land on the dashboard.",
             ],
-          },
-          {
-            kind: "note",
-            text: "The admin code is a single shared secret for the demo, printed here so you can get in. In a real deployment it is rotated after onboarding and never published.",
           },
         ],
       },
@@ -848,7 +843,6 @@ export const manuals: Manual[] = [
           {
             kind: "bullets",
             items: [
-              "The admin code is rejected — it is case-sensitive and easily mistyped. Copy it from the credentials table rather than retyping it.",
               "A customer says no slots are available — check the working hours for that day, and check the date is not blocked out.",
               "A slot disappeared while booking — someone else took it. Pick another; the calendar refreshes on its own.",
               "A booking is missing from the diary — check the date filter, and check it was not cancelled. Cancelled bookings are hidden by default rather than deleted.",
@@ -879,12 +873,14 @@ export const manuals: Manual[] = [
     accounts: [
       {
         role: "Bursar / administrator",
-        fields: [{ label: "Access", value: "Demo sign-in available on request" }],
-        note: "This portal holds school and pupil records, so a shared public password is not published here. Email me and I will send a time-limited demo account.",
+        fields: [
+          { label: "Email", value: "abdkarimochieng@gmail.com" },
+          { label: "Password", value: "#Abdik2109" },
+        ],
+        note: "Full access to fee structures, invoices, payments and statements.",
       },
     ],
-    accountsNote:
-      "Unlike the other guides in this set, no credentials are printed here on purpose — the data model is school and pupil records, and a permanently public sign-in is not appropriate for that. Everything else in this guide describes the real product.",
+    accountsNote: SHARED_DEMO_WARNING,
     sections: [
       {
         title: "1. What the portal is for",
