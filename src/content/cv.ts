@@ -12,9 +12,6 @@
  * composes the two — anything below that echoes site.ts is noted as such.
  */
 
-/** Not published elsewhere as a plain dialable string (site.ts only has the wa.me link). */
-export const cvPhone = "+254 794 935 317";
-
 /** Opening line. The "3+ years" here mirrors `site.experience.label`. */
 export const cvProfile = `Frontend-leaning full-stack developer with 3+ years building and shipping production Next.js and TypeScript applications, and hands-on experience wiring M-Pesa Daraja (STK Push, C2B paybill, B2C payouts) into real business workflows: school fee collection, e-commerce checkout, vehicle marketplaces and savings-group contributions and payouts. Builds fast, typed, server-first React on Supabase/Postgres with authorisation enforced at the database layer, integrates AI assistants over the Anthropic Claude API, and works from a UI/UX foundation — wireframing and designing in Figma before writing a line of code. Currently reading Computer Science at Umma University while shipping production software for Kenyan SMEs as a freelancer.`;
 

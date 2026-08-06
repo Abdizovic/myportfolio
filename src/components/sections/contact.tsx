@@ -48,7 +48,7 @@ export function Contact() {
                   <dt className="text-xs uppercase tracking-wide text-muted">Phone</dt>
                   <dd className="mt-1">
                     <a
-                      href={`tel:${site.phoneE164}`}
+                      href={`tel:${site.phone}`}
                       className="text-sm font-medium underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
                     >
                       {site.phone}

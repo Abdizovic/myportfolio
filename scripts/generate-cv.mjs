@@ -31,7 +31,6 @@ import {
   cvExperience,
   cvFooter,
   cvHighlights,
-  cvPhone,
   cvProfile,
   cvProjectBulletCount,
   cvProjectSlugs,
@@ -352,7 +351,7 @@ function contactEntries() {
   const linkedin = socials.find((s) => s.icon === "linkedin");
   const entries = [
     { label: site.location },
-    { label: cvPhone, url: `tel:${site.phoneE164}` },
+    { label: site.phone, url: `tel:${site.phone}` },
     { label: site.email, url: `mailto:${site.email}` },
     { label: `github.com/${githubUsername}`, url: `https://github.com/${githubUsername}` },
   ];

@@ -80,7 +80,7 @@ const personSchema = {
   name: site.fullName,
   url: site.url,
   email: `mailto:${site.email}`,
-  telephone: site.phoneE164,
+  telephone: site.phone,
   jobTitle: site.role,
   description,
   address: { "@type": "PostalAddress", addressLocality: "Nairobi", addressCountry: "KE" },

@@ -20,11 +20,11 @@ export const site = {
   location: "Nairobi, Kenya",
   email: "abdkarimochieng@gmail.com",
   /**
-   * Local format for display, E.164 for `tel:` links and structured data.
-   * Same line as the WhatsApp link below — keep the two in step.
+   * E.164, which is both what's displayed and what `tel:` links and the
+   * Person schema need — so there's one string rather than two to keep in
+   * step. Same line as the WhatsApp link below.
    */
-  phone: "0794 935 317",
-  phoneE164: "+254794935317",
+  phone: "+254794935317",
 
   /**
    * Years shipping production work — read by the hero, the About stats, the
@@ -103,7 +103,7 @@ export const socials: SocialLink[] = [
   },
   {
     label: "Phone",
-    href: `tel:${site.phoneE164}`,
+    href: `tel:${site.phone}`,
     handle: site.phone,
     icon: "phone",
   },
