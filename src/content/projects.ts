@@ -53,6 +53,112 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "autohub-marketplace",
+    name: "AutoHub Marketplace",
+    tagline:
+      "Car marketplace monorepo — a KES-priced storefront with an AI sales assistant, and a separate admin console for listings and orders.",
+    summary:
+      "A vehicle marketplace shipped as one monorepo and two deployments: a customer storefront where buyers browse listings, ask an AI assistant real questions about stock, and reserve a car over M-Pesa; and a dealer-side admin console on its own domain for inventory, pricing, enquiries and orders. The assistant is grounded in the live catalogue, so it answers from what is actually on the lot rather than from a scripted FAQ.",
+    year: "2026",
+    status: "Live",
+    domain: "E-commerce / Automotive / AI",
+    liveUrl: "https://autohub-marketplace-web.vercel.app",
+    deployments: [
+      {
+        label: "Customer storefront",
+        url: "https://autohub-marketplace-web.vercel.app",
+        description:
+          "The public marketplace — browse and filter vehicles, chat to the AI assistant, and reserve or buy over M-Pesa. No account needed to look.",
+      },
+      {
+        label: "Admin console",
+        url: "https://autohub-marketplace-admin-p6qn.vercel.app",
+        description:
+          "The dealer back office — listings, photos, pricing, stock status, enquiries and order fulfilment, behind its own sign-in.",
+      },
+    ],
+    demoVideoUrl: null, // TODO: paste the Loom / YouTube walkthrough URL
+    repoUrl: null, // TODO: add if the repo is public
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Monorepo",
+      "Supabase",
+      "Tailwind CSS",
+      "Claude API",
+      "AI chatbot",
+      "M-Pesa",
+    ],
+    features: [
+      "AI sales assistant grounded in the live vehicle catalogue — it answers from real stock, price and availability, not a scripted FAQ",
+      "Monorepo shipping two independently deployed apps — customer storefront and dealer admin console — against one shared database",
+      "Faceted vehicle search: make, model, body type, year, mileage, transmission, fuel and KES price band",
+      "Vehicle detail pages with a full photo gallery, specification table and finance-style monthly estimate",
+      "Enquiry and test-drive booking captured against a listing, so a lead is never a loose WhatsApp message",
+      "M-Pesa checkout for reservation deposits, with the same idempotent callback handling as the rest of my payment work",
+      "Admin console for listings, imagery, pricing, stock status, enquiries and order fulfilment",
+    ],
+    facts: [
+      { label: "Role", value: "Solo developer — design, frontend, backend, AI" },
+      { label: "Timeline", value: "2026" },
+      { label: "Deployments", value: "Two — storefront + admin console" },
+      { label: "AI", value: "Anthropic Claude API, catalogue-grounded" },
+      { label: "Data", value: "Supabase Postgres + Storage" },
+    ],
+    caseStudy: [
+      {
+        title: "The problem",
+        body: [
+          "Buying a used car in Kenya starts on a marketplace listing and immediately leaves it. The listing shows a photo and a price; every real question — is it still available, what is the mileage, has it been serviced, will you take an offer — becomes a phone call or a WhatsApp thread with a dealer who is answering forty of them a day.",
+          "That hurts both sides. Buyers wait hours for an answer that is written on the listing they are already looking at, and dealers spend their day re-typing the same five facts instead of selling. The information exists; it just is not reachable at the moment someone wants it.",
+        ],
+      },
+      {
+        title: "The approach",
+        body: [
+          "The marketplace itself is the straightforward part: server-rendered listing pages, faceted search across the attributes people actually filter by, and prices held in KES cents as integers so nothing drifts between a listing card and an M-Pesa prompt.",
+          "The part worth building carefully is the assistant. It sits on the storefront and answers questions about the catalogue, and the design constraint I set was that it must never invent a fact about a vehicle. Rather than fine-tuning anything or pasting the catalogue into a prompt, the assistant is given tools that read the same database the listing pages read — search the catalogue, fetch one vehicle, check availability — and it answers from what those return. If a car sold this morning, the assistant knows, because it is looking at the row the storefront is looking at.",
+        ],
+        list: [
+          "Next.js App Router, server-rendered listing and detail pages for fast first paint and clean indexing",
+          "Supabase Postgres for the catalogue, enquiries and orders; Supabase Storage for vehicle imagery",
+          "Anthropic Claude API for the assistant, with catalogue access exposed as tools rather than pasted into the prompt",
+          "Every assistant response traceable to the listing rows that produced it",
+          "M-Pesa checkout for reservation deposits, reusing the idempotent callback pattern from my other payment work",
+        ],
+      },
+      {
+        title: "Two apps, one repo",
+        body: [
+          "The storefront and the admin console are separate Next.js applications in one monorepo, deployed to two domains. A shopper's bundle contains only shop code — no admin routes, no management components, nothing hidden behind a runtime check rather than simply not being there.",
+          "It also decouples the release cadence. A dealer adding listings changes the admin app far more often than the marketplace changes, and pushing an inventory tweak should not risk the page a buyer is mid-enquiry on. Vehicle, price and order types live in shared packages, so a schema change breaks the build in both apps rather than breaking production in one.",
+        ],
+        list: [
+          "Storefront at autohub-marketplace-web.vercel.app — public, cached, indexed",
+          "Admin console at autohub-marketplace-admin-p6qn.vercel.app — authenticated, noindex",
+          "One Supabase project behind both, with row-level security deciding what each app's client may read",
+          "Shared types for vehicles, pricing and orders, so the two apps cannot drift out of agreement",
+        ],
+      },
+      {
+        title: "Hard parts",
+        body: [
+          "Keeping the assistant honest was the whole job. A chatbot that confidently offers a car that sold last week is worse than no chatbot at all, because it costs the dealer the trust that made the buyer ask. Grounding every answer in a tool call against live rows is what makes the difference — and where the catalogue genuinely does not have an answer (service history, a specific negotiation), the assistant says so and hands the conversation to the dealer instead of filling the gap.",
+          "Scoping it was the second part. An assistant with database access will happily answer questions it has no business answering, so the tools it holds are narrow and read-only: search listings, read one listing, check availability. It cannot write, cannot see another customer's enquiry, and cannot reach anything the public storefront could not already display.",
+          "The third was cost and latency on a page people browse casually. Catalogue context is cached rather than re-sent on every turn, and the assistant is given the small slice of the catalogue a question actually needs rather than the whole inventory — a search tool returning ten matching rows beats pasting four hundred listings into a prompt, in both directions.",
+        ],
+      },
+      {
+        title: "Where it landed",
+        body: [
+          "The questions that used to become phone calls now get answered on the page, from live data, at whatever hour the buyer is browsing. The ones that genuinely need a human arrive at the dealer as an enquiry attached to a specific vehicle rather than as an unattributed message.",
+          "On the operations side, the dealer runs the whole lot from the admin console — list a car, upload photos, change a price, mark one sold — and the storefront and the assistant both reflect it on the next load, because there is only one place the truth lives.",
+        ],
+      },
+    ],
+    featured: true,
+  },
+  {
     slug: "mwangaza-academy",
     name: "Mwangaza Academy",
     tagline:

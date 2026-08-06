@@ -55,6 +55,12 @@ export function SiteFooter() {
               >
                 {site.email}
               </a>
+              <a
+                href={`tel:${site.phoneE164}`}
+                className="mt-2 block text-sm text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+              >
+                {site.phone}
+              </a>
             </div>
           </div>
         </div>

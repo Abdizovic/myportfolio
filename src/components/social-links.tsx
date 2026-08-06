@@ -2,6 +2,7 @@
   GithubIcon,
   LinkedinIcon,
   MailIcon,
+  PhoneIcon,
   WhatsappIcon,
 } from "@/components/icons";
 import { socials, type SocialLink } from "@/content/site";
@@ -11,10 +12,15 @@ const iconFor = {
   linkedin: LinkedinIcon,
   mail: MailIcon,
   whatsapp: WhatsappIcon,
+  phone: PhoneIcon,
 } as const;
 
+/**
+ * `mailto:` and `tel:` hand off to another app rather than opening a page —
+ * a new tab would be left behind, blank.
+ */
 function isExternal(link: SocialLink) {
-  return !link.href.startsWith("mailto:");
+  return !link.href.startsWith("mailto:") && !link.href.startsWith("tel:");
 }
 
 export function SocialLinks({

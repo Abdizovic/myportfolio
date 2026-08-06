@@ -16,8 +16,26 @@ export const site = {
   role: "Frontend Developer & Freelancer",
   subrole: "CS Student @ Umma University",
   tagline: "Building fast, M-Pesa-ready web apps for African businesses.",
-  location: "Kajiado, Kenya",
+  /** Where I am now. The university is in Kajiado — see cvEducation. */
+  location: "Nairobi, Kenya",
   email: "abdkarimochieng@gmail.com",
+  /**
+   * Local format for display, E.164 for `tel:` links and structured data.
+   * Same line as the WhatsApp link below — keep the two in step.
+   */
+  phone: "0794 935 317",
+  phoneE164: "+254794935317",
+
+  /**
+   * Years shipping production work — read by the hero, the About stats, the
+   * page description and the CV header. `label` is written out rather than
+   * derived so it can read "3+ years" instead of a bare number; when you bump
+   * it, update the matching line in cv.ts (cvProfile, cvExperience dates) too.
+   */
+  experience: {
+    since: 2023,
+    label: "3+ years",
+  },
 
   /**
    * Canonical production URL. Vercel injects VERCEL_PROJECT_PRODUCTION_URL on
@@ -46,7 +64,7 @@ export type SocialLink = {
   label: string;
   href: string;
   handle: string;
-  icon: "github" | "linkedin" | "mail" | "whatsapp";
+  icon: "github" | "linkedin" | "mail" | "whatsapp" | "phone";
 };
 
 /**
@@ -82,6 +100,12 @@ export const socials: SocialLink[] = [
     href: "https://wa.me/254794935317",
     handle: "Chat on WhatsApp",
     icon: "whatsapp",
+  },
+  {
+    label: "Phone",
+    href: `tel:${site.phoneE164}`,
+    handle: site.phone,
+    icon: "phone",
   },
 ];
 

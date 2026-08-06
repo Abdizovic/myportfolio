@@ -73,6 +73,17 @@ export function MailIcon(props: IconProps) {
   );
 }
 
+export function PhoneIcon(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path
+        {...stroke}
+        d="M6.6 3.5h-.9A2.2 2.2 0 0 0 3.5 5.9c.3 3.5 1.9 6.8 4.4 9.3s5.8 4.1 9.3 4.4a2.2 2.2 0 0 0 2.4-2.2v-1.6a1.5 1.5 0 0 0-1.2-1.5l-2.2-.4a1.5 1.5 0 0 0-1.5.7l-.5.8a12 12 0 0 1-4.7-4.7l.8-.5a1.5 1.5 0 0 0 .7-1.5l-.4-2.2a1.5 1.5 0 0 0-1.5-1.2Z"
+      />
+    </Svg>
+  );
+}
+
 export function SunIcon(props: IconProps) {
   return (
     <Svg {...props}>

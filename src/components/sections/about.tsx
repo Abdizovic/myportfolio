@@ -3,6 +3,10 @@ import { Card, Container, Section, SectionHeading } from "@/components/ui";
 import { site } from "@/content/site";
 
 const facts = [
+  {
+    label: "Experience",
+    value: `${site.experience.label} — freelancing since ${site.experience.since}`,
+  },
   { label: "Based in", value: `${site.location}` },
   { label: "Studying", value: "BSc Computer Science, Umma University" },
   { label: "Focus", value: "Next.js · Supabase · M-Pesa integrations" },
@@ -10,9 +14,8 @@ const facts = [
 ];
 
 const exploring = [
-  "UI/UX design in Figma",
-  "Full-stack web development",
   "React Native & Expo",
+  "AI product integrations",
   "Blockchain fundamentals",
 ];
 
@@ -32,10 +35,15 @@ export function About() {
           <Reveal delay={60}>
             <div className="space-y-5 text-base leading-relaxed text-muted sm:text-lg">
               <p>
-                I&apos;m a Computer Science student at{" "}
+                I&apos;m based in{" "}
+                <strong className="font-medium text-foreground">Nairobi</strong>, with{" "}
+                <strong className="font-medium text-foreground">
+                  {site.experience.label}
+                </strong>{" "}
+                building production web applications in Next.js, TypeScript and
+                Supabase — alongside a Computer Science degree at{" "}
                 <strong className="font-medium text-foreground">Umma University</strong>{" "}
-                in Kajiado, Kenya, and a freelance developer working mostly in Next.js,
-                TypeScript and Supabase.
+                in Kajiado.
               </p>
               <p>
                 What I keep coming back to is the seam between a nice interface and real
@@ -55,10 +63,19 @@ export function About() {
                 form. A savings group that needs a ledger everyone can trust.
               </p>
               <p>
-                Alongside that I care a lot about how things look and feel — I design in
-                Figma before I write components — and I&apos;m steadily widening the
-                circle into mobile with React Native, and into blockchain because the
-                settlement problems rhyme with the ones I already work on.
+                I came to this with a{" "}
+                <strong className="font-medium text-foreground">UI/UX background</strong>{" "}
+                rather than away from one. I wireframe and design in Figma before I write
+                components — type scale, spacing, states, the whole system — so what gets
+                built is a decision someone already made on a canvas rather than
+                something that accumulated in CSS.
+              </p>
+              <p>
+                Lately that&apos;s extended into AI features that have to be honest about
+                real data — a marketplace assistant that answers from live stock instead
+                of a script — and I&apos;m steadily widening the circle into mobile with
+                React Native, and into blockchain because the settlement problems rhyme
+                with the ones I already work on.
               </p>
             </div>
           </Reveal>

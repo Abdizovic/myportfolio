@@ -46,9 +46,10 @@ export function Hero() {
 
             <Reveal delay={160}>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-                {site.tagline} I work with Kenyan SMEs and international clients on
-                Next.js products backed by Supabase — including the M-Pesa
-                integrations most developers would rather not touch.
+                {site.tagline} {site.experience.label} working with Kenyan SMEs and
+                international clients on Next.js products backed by Supabase —
+                including the M-Pesa integrations most developers would rather not
+                touch.
               </p>
             </Reveal>
 

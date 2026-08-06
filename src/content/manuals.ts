@@ -76,6 +76,256 @@ const MPESA_SANDBOX_NOTE =
   "Payments run against the M-Pesa sandbox, not live Safaricom rails. An STK Push prompt will not appear on a real handset and no money moves; the demo simulates the callback so you can follow the full flow end to end.";
 
 export const manuals: Manual[] = [
+  // ── AutoHub Marketplace ───────────────────────────────────────────────────
+  {
+    slug: "autohub-marketplace",
+    project: "AutoHub Marketplace",
+    title: "AutoHub Marketplace — User Guide",
+    subtitle:
+      "Buying a vehicle on the storefront, using the AI assistant, and running the lot from the dealer admin console.",
+    file: "/manuals/autohub-marketplace-user-guide.pdf",
+    version: "Revision 1 — August 2026",
+    environments: [
+      {
+        label: "Customer storefront",
+        url: "https://autohub-marketplace-web.vercel.app",
+        note: "The marketplace buyers see. Browse, search and chat to the assistant without an account; you only sign in to keep enquiries and orders.",
+      },
+      {
+        label: "Admin console",
+        url: "https://autohub-marketplace-admin-p6qn.vercel.app",
+        note: "Where the lot is run — listings, photos, pricing, enquiries and orders. Sign-in required.",
+      },
+    ],
+    accounts: [
+      {
+        role: "Admin console",
+        fields: [
+          { label: "Access", value: "By request — email me for a demo sign-in" },
+        ],
+        note: "Unlike the other guides in this set, the AutoHub admin console does not publish a shared demo account: the console writes to a live vehicle catalogue that the storefront and the AI assistant both read, so an open sign-in would let anyone change what every visitor sees. Email abdkarimochieng@gmail.com and I will set up a walkthrough or a scoped account.",
+      },
+      {
+        role: "Storefront buyer",
+        fields: [
+          { label: "Account", value: "Not required — browse, chat and enquire as a guest" },
+        ],
+        note: "Create your own buyer account from the Sign in link if you want your enquiries and reservations kept in one place.",
+      },
+    ],
+    accountsNote:
+      "The storefront is a public showcase holding sample vehicle data — do not enter real names, phone numbers, ID numbers or live payment details anywhere in it. The AI assistant reads the demo catalogue, so anything it quotes back is sample data too.",
+    sections: [
+      {
+        title: "1. What AutoHub is",
+        blocks: [
+          {
+            kind: "text",
+            text: "AutoHub is a car marketplace built for how vehicles are actually bought in Kenya: every price is quoted in Kenyan Shillings, the questions buyers ask most are answered on the page by an AI assistant instead of over the phone, and a reservation is confirmed with an M-Pesa prompt on your own handset rather than a card form.",
+          },
+          {
+            kind: "text",
+            text: "It ships as one monorepo deployed to two separate addresses. Splitting them keeps the marketplace fast and public while the management screens sit behind their own sign-in on their own domain — a buyer never loads a byte of admin code, and the admin app can be redeployed without the marketplace going with it.",
+          },
+          {
+            kind: "bullets",
+            items: [
+              "Customer storefront — the public marketplace: search, vehicle pages, the AI assistant, enquiries and M-Pesa checkout.",
+              "Admin console — the dealer back office: listings, images, pricing, stock status, enquiries and order fulfilment.",
+              "Both apps read and write one shared database, so a price change in admin shows on the marketplace — and in the assistant's answers — immediately.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "2. Finding a vehicle",
+        blocks: [
+          {
+            kind: "text",
+            text: "Open the storefront address. No sign-in is needed to browse or to use the assistant.",
+          },
+          {
+            kind: "steps",
+            items: [
+              "Use the search bar for a make or model by name, or go straight to the browse page for the full catalogue.",
+              "Narrow the results with the filters: make, model, body type, year, mileage, transmission, fuel and KES price band.",
+              "Sort by price, year or mileage depending on what you are optimising for.",
+              "Click any vehicle to open its page — full photo gallery, specification table, description and current availability.",
+            ],
+          },
+          {
+            kind: "note",
+            text: "Every price shown is the asking price in Kenyan Shillings. Where a monthly figure appears alongside it, that is an indicative finance estimate for comparison — it is not an offer and no lender is involved.",
+          },
+        ],
+      },
+      {
+        title: "3. Asking the AI assistant",
+        blocks: [
+          {
+            kind: "text",
+            text: "The assistant is the part of AutoHub that replaces the phone call. It is connected to the same live catalogue the listing pages read, so it answers from the vehicles actually on the lot right now — not from a scripted FAQ and not from general knowledge about cars.",
+          },
+          {
+            kind: "steps",
+            items: [
+              "Open the chat from the button in the corner of any storefront page.",
+              "Ask in plain language — 'what automatic SUVs do you have under 2 million', 'is the white Axio still available', 'which of these has the lowest mileage'.",
+              "The assistant searches the catalogue and answers with real vehicles, linking each one so you can open its page.",
+              "Follow up in the same conversation. It keeps the thread, so 'what about diesel ones' continues from your last question.",
+            ],
+          },
+          {
+            kind: "bullets",
+            items: [
+              "It can compare vehicles that are in the catalogue, on the attributes the listings record — price, year, mileage, transmission, fuel, body type.",
+              "It will tell you when something is sold or reserved, because it is reading the same availability the listing page shows.",
+              "It will say it does not know rather than guess. Service history, accident history and what a dealer will accept on a negotiation are not in the catalogue, so it hands those to a human instead of inventing an answer.",
+              "It cannot change anything — it has read-only access to the public catalogue, and cannot see other customers' enquiries or orders.",
+            ],
+          },
+          {
+            kind: "note",
+            text: "If an answer matters to your decision, open the vehicle page the assistant linked and confirm it there. The listing is the record; the assistant is a faster way to reach it.",
+          },
+        ],
+      },
+      {
+        title: "4. Enquiries and test drives",
+        blocks: [
+          {
+            kind: "steps",
+            items: [
+              "On a vehicle page, choose Enquire or Book a test drive.",
+              "Fill in your name, phone number and email, and add a note if there is anything specific you want to ask.",
+              "For a test drive, pick a date and time from the slots the dealer has opened.",
+              "Submit. You get a reference on screen, and the enquiry lands in the dealer's console attached to that exact vehicle.",
+            ],
+          },
+          {
+            kind: "note",
+            text: "Because the enquiry is attached to a listing rather than sent as a loose message, the dealer opens it already knowing which car you mean — which is usually the difference between a same-day reply and a thread of clarifying questions.",
+          },
+        ],
+      },
+      {
+        title: "5. Reserving with M-Pesa",
+        blocks: [
+          {
+            kind: "text",
+            text: "A reservation deposit is taken over M-Pesa STK Push (Lipa Na M-Pesa Online). No card details are ever collected, and nothing sensitive is typed into the website — you approve the payment on your own handset with your own PIN.",
+          },
+          {
+            kind: "steps",
+            items: [
+              "From the vehicle page, choose to reserve and check the summary. The figure shown is the exact amount that will appear on your phone.",
+              "Enter the Safaricom number you want to pay from, in the format 07XXXXXXXX, and confirm.",
+              "A prompt appears on that handset showing the merchant and the amount. Enter your M-Pesa PIN to approve.",
+              "The page is polling in the background. Once Safaricom confirms, it moves to the reserved state and shows your reference. Keep the tab open until then.",
+            ],
+          },
+          {
+            kind: "bullets",
+            items: [
+              "If you ignore the prompt it times out after about a minute, nothing is charged, and the vehicle goes back to available.",
+              "If you cancel on the handset, the site says so in plain language rather than showing an error code.",
+              "If your balance is short, the reservation fails cleanly and you can retry from the same vehicle.",
+              "A repeated confirmation from Safaricom can never take the deposit twice — every callback is deduplicated on the M-Pesa transaction ID.",
+            ],
+          },
+          { kind: "note", text: MPESA_SANDBOX_NOTE },
+        ],
+      },
+      {
+        title: "6. Signing in to the admin console",
+        blocks: [
+          {
+            kind: "steps",
+            items: [
+              "Open the admin address. You land on the AutoHub Admin sign-in screen; visiting the root redirects you there.",
+              "Enter the email and password for your dealer account.",
+              "Press Sign In. You arrive at the console dashboard, with today's enquiries and any pending orders at the top.",
+            ],
+          },
+          {
+            kind: "note",
+            text: "There is no published demo account for this console — see the note in the sign-in table at the front of this guide. Email me and I will arrange access or a walkthrough.",
+          },
+        ],
+      },
+      {
+        title: "7. Managing listings",
+        blocks: [
+          {
+            kind: "text",
+            text: "The listings section is where vehicles are created and edited. Anything saved here is live on the marketplace on the next page load — and in the assistant's answers immediately, because it reads the same rows.",
+          },
+          {
+            kind: "steps",
+            items: [
+              "Open Listings from the console navigation to see everything currently published.",
+              "Create a new vehicle, or click an existing one to edit it.",
+              "Fill in make, model, year, body type, mileage, transmission, fuel and engine size. These are exactly the fields buyers filter on, so a blank one makes the vehicle harder to find.",
+              "Write the description. The assistant quotes from it, so anything true and useful here answers a question you would otherwise field by phone.",
+              "Upload images. The first image is the one used on search cards and in the assistant's replies.",
+              "Set the asking price in Kenyan Shillings, then save.",
+            ],
+          },
+          {
+            kind: "note",
+            text: "Prices are stored as whole cents rather than decimals, which is why the amount on the listing and the amount on the M-Pesa prompt can never drift apart by a rounding error.",
+          },
+        ],
+      },
+      {
+        title: "8. Stock status, enquiries and orders",
+        blocks: [
+          {
+            kind: "text",
+            text: "Every vehicle carries an explicit availability state, and it is the single most important field in the system — the marketplace, the assistant and the checkout all read it.",
+          },
+          {
+            kind: "bullets",
+            items: [
+              "Available — listed, searchable, and offered by the assistant.",
+              "Reserved — a deposit is being taken or has been confirmed. It stays visible but cannot be reserved again.",
+              "Sold — removed from search results, and the assistant will tell a buyer it has gone rather than offering it.",
+              "Draft — not published. Use this while you are still adding photos and details.",
+            ],
+          },
+          {
+            kind: "steps",
+            items: [
+              "Open Enquiries to see incoming leads, each attached to the vehicle it came from, with the customer's details and any note.",
+              "Open Orders for reservations and their payment state, including the M-Pesa receipt on confirmed ones.",
+              "Mark a vehicle sold as soon as it is. The assistant stops offering it on the next question asked, and no further reservations can be taken.",
+            ],
+          },
+          {
+            kind: "note",
+            text: "Leaving a sold vehicle marked available is the one mistake that reaches customers fastest — the assistant will keep recommending it in good faith, because the catalogue still says it is there.",
+          },
+        ],
+      },
+      {
+        title: "9. If something goes wrong",
+        blocks: [
+          {
+            kind: "bullets",
+            items: [
+              "The assistant says a vehicle is unavailable but the listing shows it — reload the page. Both read the same row, so a disagreement means one of them is showing a cached page.",
+              "The assistant will not answer a question — it only speaks to the catalogue. Service history, accident history and negotiation are dealer questions; use the enquiry form and a human will pick it up.",
+              "The M-Pesa prompt never arrived — check the number is a Safaricom line entered as 07XXXXXXXX, then retry from the vehicle page.",
+              "The page is still saying 'waiting for your approval' — leave it a moment. If the confirmation is delayed, the reservation is reconciled against Safaricom and the correct state wins.",
+              "A new listing is not showing in search — confirm it is published rather than draft, then reload; marketplace pages are cached briefly for speed.",
+              "You were signed out of admin — sessions expire. Sign in again with the same details.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
   // ── HOROLOGY ──────────────────────────────────────────────────────────────
   {
     slug: "horology",

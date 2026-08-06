@@ -45,6 +45,17 @@ export function Contact() {
                   </dd>
                 </div>
                 <div>
+                  <dt className="text-xs uppercase tracking-wide text-muted">Phone</dt>
+                  <dd className="mt-1">
+                    <a
+                      href={`tel:${site.phoneE164}`}
+                      className="text-sm font-medium underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+                    >
+                      {site.phone}
+                    </a>
+                  </dd>
+                </div>
+                <div>
                   <dt className="text-xs uppercase tracking-wide text-muted">
                     Based in
                   </dt>

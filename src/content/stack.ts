@@ -84,12 +84,33 @@ export const stack: StackGroup[] = [
     ],
   },
   {
-    title: "Mobile & design",
-    blurb: "Shipping the same product beyond the browser.",
+    title: "Design & UI/UX",
+    blurb: "Drawn before it's built — I design the thing I then ship.",
     items: [
+      { name: "Figma", note: "Wireframes to high-fidelity screens", icon: "figma" },
+      {
+        name: "Design systems",
+        note: "Type scale, spacing, colour, components",
+        icon: "pen",
+      },
+      {
+        name: "Accessibility",
+        note: "WCAG AA, keyboard and screen-reader paths",
+        icon: "shield",
+      },
+    ],
+  },
+  {
+    title: "AI & mobile",
+    blurb: "Where the work is heading next.",
+    items: [
+      {
+        name: "Claude API",
+        note: "Assistants grounded in live product data",
+        icon: "claude",
+      },
       { name: "React Native", note: "Cross-platform mobile", icon: "react" },
       { name: "Expo", note: "Managed builds and OTA updates", icon: "expo" },
-      { name: "Figma", note: "UI/UX design, then straight to code", icon: "figma" },
     ],
   },
 ];

@@ -25,7 +25,9 @@ export type TechIconKey =
   | "africastalking"
   | "webhook"
   | "expo"
-  | "figma";
+  | "figma"
+  | "claude"
+  | "pen";
 
 const s = {
   fill: "none",
@@ -139,6 +141,20 @@ const marks: Record<TechIconKey, ReactNode> = {
       <path {...s} d="M12 9H9a3 3 0 0 0 0 6h3V9Z" />
       <path {...s} d="M12 15H9a3 3 0 1 0 3 3v-3Z" />
       <circle {...s} cx="15" cy="12" r="3" />
+    </>
+  ),
+  // A conversation turn plus a spark — an assistant, not a chat widget.
+  claude: (
+    <>
+      <path {...s} d="M20 14.5a2.5 2.5 0 0 1-2.5 2.5H9l-4 3.5V6.5A2.5 2.5 0 0 1 7.5 4h10A2.5 2.5 0 0 1 20 6.5v8Z" />
+      <path {...s} d="M12.5 7.5 13.6 10l2.4 1-2.4 1-1.1 2.5-1-2.5L9 11l2.5-1 1-2.5Z" />
+    </>
+  ),
+  // Design work: a nib over a frame.
+  pen: (
+    <>
+      <path {...s} d="M4 20.2 4.8 17l9.7-9.7 3.2 3.2L8 20.2l-4 0Z" />
+      <path {...s} d="m16.1 5.2 1.6-1.6a1.6 1.6 0 0 1 2.3 0l.9.9a1.6 1.6 0 0 1 0 2.3l-1.6 1.6" />
     </>
   ),
 };

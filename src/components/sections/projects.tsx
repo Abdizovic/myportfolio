@@ -11,8 +11,8 @@ export function Projects() {
           <SectionHeading
             id="projects-heading"
             eyebrow="Selected work"
-            title="Five products, one recurring theme."
-            lede="Each of these moves real money through M-Pesa. Click through for the full case study — the problem, the approach, and the parts that were genuinely hard. Most ship with a downloadable user guide and demo sign-in, so you can walk into the admin side yourself."
+            title="Six products, one recurring theme."
+            lede="Each of these moves real money through M-Pesa. Click through for the full case study — the problem, the approach, and the parts that were genuinely hard. Every one ships with a downloadable user guide, and most publish a demo sign-in so you can walk into the admin side yourself."
           />
         </Reveal>
 

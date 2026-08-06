@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const description = `${site.role} and CS student at Umma University, Kenya. I build fast, accessible Next.js apps with Supabase and M-Pesa (Daraja) payments for Kenyan and international clients.`;
+const description = `${site.role} in ${site.location} with ${site.experience.label} of production experience. I build fast, accessible Next.js apps with Supabase, M-Pesa (Daraja) payments and AI integrations for Kenyan and international clients.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -39,6 +39,8 @@ export const metadata: Metadata = {
     "freelance frontend developer Kenya",
     "STK Push integration",
     "TypeScript developer",
+    "UI/UX designer Nairobi",
+    "AI chatbot integration Kenya",
   ],
   authors: [{ name: site.fullName, url: site.url }],
   creator: site.fullName,
@@ -78,9 +80,10 @@ const personSchema = {
   name: site.fullName,
   url: site.url,
   email: `mailto:${site.email}`,
+  telephone: site.phoneE164,
   jobTitle: site.role,
   description,
-  address: { "@type": "PostalAddress", addressLocality: "Kajiado", addressCountry: "KE" },
+  address: { "@type": "PostalAddress", addressLocality: "Nairobi", addressCountry: "KE" },
   alumniOf: { "@type": "CollegeOrUniversity", name: "Umma University" },
   knowsAbout: [
     "Next.js",
@@ -89,6 +92,8 @@ const personSchema = {
     "Supabase",
     "M-Pesa Daraja API",
     "Tailwind CSS",
+    "UI/UX design",
+    "AI chatbot integration",
   ],
   sameAs: socials
     .filter((s) => s.icon !== "mail" && s.icon !== "whatsapp")
