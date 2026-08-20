@@ -65,7 +65,7 @@ export type Manual = {
 /** Contact block printed in the footer of every generated PDF. */
 export const manualAuthor = {
   name: "Abdikarim",
-  role: "Frontend Developer & Freelancer",
+  role: "Web developer & Freelancer",
   email: "abdkarimochieng@gmail.com",
 } as const;
 

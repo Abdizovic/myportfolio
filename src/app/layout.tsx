@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "M-Pesa Daraja API integration",
     "Supabase developer",
     "React developer Nairobi",
-    "freelance frontend developer Kenya",
+    "freelance web developer Kenya",
     "STK Push integration",
     "TypeScript developer",
     "UI/UX designer Nairobi",

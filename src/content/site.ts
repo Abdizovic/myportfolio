@@ -13,7 +13,7 @@ export const site = {
   name: "Abdikarim",
   /** Used in <title>, structured data and the CV filename. */
   fullName: "Abdikarim",
-  role: "Frontend Developer & Freelancer",
+  role: "Web developer & Freelancer",
   subrole: "CS Student @ Umma University",
   tagline: "Building fast, M-Pesa-ready web apps for African businesses.",
   /** Where I am now. The university is in Kajiado — see cvEducation. */
